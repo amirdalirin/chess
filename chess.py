@@ -31,6 +31,7 @@ notation = {
 #chess board
 def chess_board():
     chess_board_lins(-200,200,-200,200)
+    gray_sq()
     
 def chess_board_lins(startx,endx,starty,endy):
     turtle.penup()
@@ -59,22 +60,51 @@ def inside():
         turtle.fd(50)
         turtle.left(90)
 
+def gray_sq():
+    y = -200
+    x = -200
+    g = turtle.Turtle()
+    g.speed(0)
+    for h in range(8):
+      
+        for k in range(4):
+            g.penup()
+            g.goto(x, y)
+            g.pendown()
+            g.color("gray")
+            g.begin_fill()
+            g.fd(50)
+            g.left(90)
+            g.fd(50)
+            g.left(90)
+            g.fd(50)
+            g.left(90)
+            g.fd(50)
+            g.left(90)
+            g.end_fill()
+            x = x + 100
+        y = y + 50 
+        if h % 2 == 0 :
+            x = -150
+        else:
+            x = -200
+      
 #
 def peaces():
     pawn()
 
 print(notation["a"+"1"])
+alph = {'a','b','c','d','e','f','g','h'}
 
 def pawn():
    
-    for i in range(8): 
+    for i in alph: 
         p = turtle.Turtle("pawn")
-        i = i + 1
-        i = str(i)
         p.penup()
-        p.goto(notation["a"+i])
+        p.goto(notation[i+'2'])
         p.pendown()
         p.fd(1)
+        p.left(90)
         
         
     
