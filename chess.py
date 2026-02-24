@@ -1,4 +1,4 @@
-import turtle 
+import turtle
 
 s = turtle.Screen()
 s.title("chess")
@@ -92,6 +92,7 @@ def gray_sq():
 #
 def peaces():
     pawn()
+    king()
 
 print(notation["a"+"1"])
 alph = {'a','b','c','d','e','f','g','h'}
@@ -106,7 +107,14 @@ def pawn():
         p.fd(1)
         p.left(90)
         
-        
+def king():
+    k = turtle.Turtle("king") 
+    k.penup()
+    k.goto(notation['e1'])
+    k.pendown()
+    k.fd(1)
+    k.left(90)
+
     
 
 
